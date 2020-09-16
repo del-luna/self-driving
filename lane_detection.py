@@ -68,9 +68,13 @@ def run(path):
     gray_img = grayscale(image)
     blur_img = gaussian_blur(gray_img, 3)
     canny_img = canny(blur_img, 70, 210)
+    # vertices = np.array(
+    #     [[(50, height), (width / 2 - 45, height / 2 + 60),
+    #       (width / 2 + 45, height / 2 + 60), (width - 50, height)]],
+    #     dtype=np.int32)
     vertices = np.array(
-        [[(50, height), (width / 2 - 45, height / 2 + 60),
-          (width / 2 + 45, height / 2 + 60), (width - 50, height)]],
+        [[(0.1*width/2,height), (width/2-0.1*width/2,height/2+0.1*height/2),
+          (width/2+0.1*width/2,height/2+0.1*height/2),(width-0.1*width/2,height)]],
         dtype=np.int32)
     ROI_img = region_crop(canny_img, vertices)
     line_arr = hough_lines(ROI_img, 1, np.pi / 180, 30, 10, 20)
