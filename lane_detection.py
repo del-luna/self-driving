@@ -93,5 +93,5 @@ def run(image):
     draw_fit_line(temp, left_fit_line)
     draw_fit_line(temp, right_fit_line)
     result = weighted_img(temp, image)
-    return result
-    #img_show(image, result)
+    #return result
+    return img_show(image, result)

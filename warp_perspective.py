@@ -225,8 +225,7 @@ def apply_threshold(img, s_thresh=(150, 255), sx_thresh=(30, 100)):
     color_binary[((s_binary == 1) & (l_binary == 1)) | (sxbinary == 1)] = 1
     return color_binary
 
-def process_image(path):
-    image = cv2.imread(path)
+def process_image(image):
     height, width = image.shape[:2]
     src = np.float32([
         [0.1 * width, height],
