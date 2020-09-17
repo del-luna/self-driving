@@ -12,7 +12,7 @@
 <br>
 <br>
 
-##Inference
+## Inference
 ```python
 python3 detect.py —cfg cfg/yolov3-tiny.cfg —weights yolov3-tiny.pt —source noshadow.mp4 
 ```
@@ -30,4 +30,4 @@ It is difficult to detect lanes for challenge video.
 <br>
 
 I used yolov3 tiny because it is intended to be used on a raspberry pi.<br>
- There is an improvement in performance when using the original yolov3.
+There is an improvement in performance when using the original yolov3.
