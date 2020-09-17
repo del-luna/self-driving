@@ -62,8 +62,7 @@ def img_show(origin, transformation):
     ax[1].imshow(transformation)
     plt.show()
 
-def run(path):
-    image = cv2.imread(path)
+def run(image):
     height, width = image.shape[:2]
     gray_img = grayscale(image)
     blur_img = gaussian_blur(gray_img, 3)
@@ -94,4 +93,5 @@ def run(path):
     draw_fit_line(temp, left_fit_line)
     draw_fit_line(temp, right_fit_line)
     result = weighted_img(temp, image)
-    img_show(image, result)
+    return result
+    #img_show(image, result)
